@@ -21,7 +21,7 @@ INNER JOIN job_postings_fact As job_postings on job_postings.job_id = skills_to_
 LIMIT 100000
 
 
-
+----more depth analyst
 
 SELECT 
         job_postings.job_id,
@@ -34,6 +34,7 @@ WHERE
     job_postings.job_work_from_home = true
 
 
+---depth
 
 
 SELECT 
@@ -46,6 +47,10 @@ WHERE
     job_postings.job_work_from_home = true
 Group by
         skill_id
+
+
+
+----more depth
 
 
 with remort_job_skills AS (
@@ -70,4 +75,4 @@ FROM remort_job_skills
 INNER JOIN skills_dim As skills on skills.skill_id = remort_job_skills.skill_id
 Order by
         skill_count desc
-        LIMIT 5
+LIMIT 5
